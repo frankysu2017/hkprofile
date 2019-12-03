@@ -3,6 +3,8 @@
 
 import cv2
 import os
+import base64
+from db_conn import get_db
 
 
 def type_convert(filename):
@@ -10,6 +12,14 @@ def type_convert(filename):
     print(filename, pngname)
     img = cv2.imread(filename)
     cv2.imwrite(pngname, img)
+
+def insert_img(filename):
+    id = filename.split('/')[-1].split('.')[0]
+    db = get_db()
+    with open(filename, 'rb') as f:
+        base64_data = base64.b64encode(f.read())
+        s = base64_data.decode()
+        db.excute('UPDATE TABLE person SET picture=? WHERE id=?', ('data:image/png;base64,%s'%s, id))
 
 
 if __name__ == "__main__":
