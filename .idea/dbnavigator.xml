@@ -31,9 +31,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="cc054b9c-03a4-416a-9a6e-585686355a3a">
-      <console name="Connection" type="STANDARD" schema="main" session="Main">drop table person if exists</console>
-      <console name="Connection 1" type="STANDARD" schema="main" session="Main">update person set en_name=en_name||en_name||en_name where id=9;
-select * from person where id=9;</console>
+      <console name="Connection" type="STANDARD" schema="main" session="Main"><![CDATA[select * from person where picture != ""]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
@@ -82,7 +80,7 @@ select * from person where id=9;</console>
           <description value="" />
           <database-type value="SQLITE" />
           <config-type value="BASIC" />
-          <database-version value="3.23" />
+          <database-version value="3.3" />
           <driver-source value="BUILTIN" />
           <driver-library value="" />
           <driver value="" />
@@ -293,6 +291,8 @@ select * from person where id=9;</console>
           <content-type name="XHTML" enabled="true" />
           <content-type name="SQL" enabled="true" />
           <content-type name="PL/SQL" enabled="true" />
+          <content-type name="JSON" enabled="true" />
+          <content-type name="JSON5" enabled="true" />
           <content-type name="YAML" enabled="true" />
         </content-types>
       </qualified-text-editor>

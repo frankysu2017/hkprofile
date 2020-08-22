@@ -94,7 +94,7 @@ def profile(id):
     data = cur.execute('SELECT * from person where id = ?', (id, )).fetchall()
     data = [x for x in data[0]]
     if data[3]:
-        data[3] = data[3].split('\n')
+        data[3] = data[3].split('\n')[:-1]
     data = tuple(data)
     return render_template('profile.html', data=data)
 
